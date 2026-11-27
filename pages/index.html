@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TN VED AI — справочник ТН ВЭД ЕАЭС</title>
+<link rel="stylesheet" href="./site.css">
+<script src="./site.js" defer></script>
+<body>
+<header>
+  <strong>TN VED AI</strong>
+  <nav aria-label="Разделы"><a href="#search">Поиск</a><a href="#catalog">Справочник</a><a href="#sources">Источники</a></nav>
+  <div class="controls">
+    <select id="country" aria-label="Страна оформления"><option value="BY">РБ</option><option value="RU">РФ</option></select>
+    <button id="theme" type="button">Тёмная тема</button>
+  </div>
+</header>
+<main>
+  <p class="notice">Демонстрационный набор. Коды здесь предназначены для проверки интерфейса.</p>
+  <section class="hero" id="search">
+    <h1>Найдите нужный код ТН ВЭД</h1>
+    <p>Введите название товара или начальные цифры кода.</p>
+    <form id="search-form">
+      <input name="q" type="search" aria-label="Название товара или код" placeholder="Например, кофе или 0901" maxlength="160">
+      <button type="submit">Найти</button>
+    </form>
+    <p>Попробуйте <a href="?q=кофе#search">кофе</a>, <a href="?q=0901#search">0901</a> или <a href="?q=яйца%20страуса#search">яйца страуса</a>.</p>
+    <ul id="results" aria-live="polite"></ul>
+  </section>
+  <section id="catalog">
+    <h2>Демонстрационный справочник</h2>
+    <details><summary>Кофе и чай</summary><ul><li><a href="#code-0901">0901 · Кофе</a></li><li><a href="#code-0902">0902 · Чай</a></li><li><a href="#code-0901210000">0901210000 · Кофе жареный</a></li></ul></details>
+    <details><summary>Яйца птиц</summary><ul><li><a href="#code-0499999999">0499999999 · Яйца страуса для инкубации</a></li></ul></details>
+  </section>
+  <section id="position" hidden aria-live="polite">
+    <h2 id="position-title"></h2>
+    <p id="position-description"></p>
+    <p id="position-country"></p>
+    <button type="button" id="copy">Скопировать код</button>
+  </section>
+  <section id="sources">
+    <h2>Официальные источники</h2>
+    <ul><li><a href="https://eec.eaeunion.org/comission/department/catr/ett/">Номенклатура ЕАЭС по товарным группам</a></li><li><a href="https://docs.eaeunion.org/documents/386/6099/">Решение Совета ЕЭК № 80</a></li></ul>
+  </section>
+</main>
+</body>
+</html>

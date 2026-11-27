@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root{--bg:#f3f6fb;--paper:#fff;--ink:#192740;--muted:#52617a;--line:#dce4f0;--blue:#1857cf;--nav:#102447}
+[data-theme=dark]{--bg:#111a2b;--paper:#17243a;--ink:#e5edf9;--muted:#a6b6d0;--line:#354762;--blue:#87aeff;color-scheme:dark}
+body{margin:0;font-family:"Segoe UI",system-ui,sans-serif}
+.app{min-height:100vh;background:var(--bg);color:var(--ink)}
+.shell{display:grid;grid-template-columns:222px minmax(0,1fr)}
+aside{background:var(--nav);color:white;padding:24px 16px;min-height:100vh}
+nav{display:flex;gap:12px;flex-wrap:wrap}
+aside nav{display:grid;margin-top:24px;gap:4px}
+aside nav a{padding:9px;border-radius:6px}
+aside nav a:hover{background:#ffffff20}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);background:var(--paper);padding:16px clamp(16px,4vw,48px)}
+.brand{font-weight:800;letter-spacing:.08em}
+main{width:min(1040px,100%);margin:auto;padding:32px clamp(16px,4vw,48px)}
+section,.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;margin-block:16px}
+.hero{padding-block:clamp(32px,8vw,96px);border-top:5px solid var(--blue)}
+h1{font-weight:750;font-size:clamp(28px,4vw,44px);line-height:1.12;margin-bottom:16px}
+h2{font-size:21px;font-weight:700;margin-bottom:10px}
+p{margin-block:8px;color:var(--muted)}
+a:hover{text-decoration:underline}
+main a{color:var(--blue)}
+form,.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input,select,button,.button{border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);padding:9px 12px}
+button{cursor:pointer}
+.primary{background:#1857cf;color:white;border-color:#1857cf}
+input[name=q]{flex:1;min-width:min(220px,100%)}
+code{font-family:Consolas,monospace;font-variant-numeric:tabular-nums;color:var(--blue);white-space:nowrap}
+.row{padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.notice{border-left:4px solid var(--blue);padding:8px 12px;background:var(--paper)}
+.tree{padding-left:16px;border-left:1px solid var(--line);margin-top:8px}
+.tree li{padding:6px 0}
+footer{padding:20px 0;color:var(--muted)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+@media(max-width:720px){.shell{display:block}aside{min-height:auto;padding:12px}aside nav{display:flex;margin-top:6px}main{padding-top:20px}section{padding:16px}}
